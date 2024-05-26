@@ -1,0 +1,33 @@
+.BlogList {
+  display: flex;
+  margin-top: 5rem;
+  margin-inline: 5vw;
+  flex-direction: column;
+  h2 {
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-decoration: underline;
+  }
+  .blogsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2rem;
+    width: 80vw;
+    margin-inline: auto;
+    position: relative;
+    padding: 1rem 2rem;
+    .blogs {
+      width: 40%;
+      min-width: 450px;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #292828;
+        box-shadow: 0 0 10px rgba(226, 226, 226, 0.645);
+      }
+    }
+  }
+}
