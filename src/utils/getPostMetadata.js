@@ -12,13 +12,12 @@ const getPostMetadata = () => {
   const posts = markdownFiles.map((filename) => {
     const filePath = `${foldereName}/${filename}`;
     const fileContent = fs.readFileSync(filePath, "utf8");
-    const { data } = matter(fileContent);
+    const { data,content } = matter(fileContent);
     return {
       slug: filename.replace(".md", ""),
       title: data.title,
       summary: data.summary,
       date: data.date,
-      content: data.content,
     };
   });
   // Return the metadata of each post

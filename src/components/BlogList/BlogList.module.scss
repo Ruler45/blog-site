@@ -1,6 +1,6 @@
 .BlogList {
   display: flex;
-  margin-top: 5rem;
+  margin-top: 1rem;
   margin-inline: 5vw;
   flex-direction: column;
   h2 {
@@ -19,15 +19,22 @@
     padding: 1rem 2rem;
     .blogs {
       width: 40%;
+      height: 12rem;
       min-width: 450px;
       padding: 0.5rem 1rem;
       border-radius: 10px;
       transition: all 0.3s ease;
-
       &:hover {
-        background-color: #292828;
-        box-shadow: 0 0 10px rgba(226, 226, 226, 0.645);
+        background-color: #121212;
+        box-shadow: 0 0 5px rgba(195, 195, 195, 0.645);
+        transform: scale(1.05);
+      }
+      p{
+        margin-top: 1rem;
+        max-height: 50%;
+        color: #b8aeae;
       }
     }
   }
 }
+

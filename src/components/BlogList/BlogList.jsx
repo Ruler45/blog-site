@@ -11,10 +11,18 @@ const BlogList = () => {
       <div className={styles.blogsContainer}>
         {postMetadata.map((post) => {
           return (
-            <Link href={`/posts/${post.slug}`} className={styles.blogs} key={post.slug}>
+            <Link
+              href={`/blogs/${post.slug}`}
+              className={styles.blogs}
+              key={post.slug}
+            >
               <h3>{post.title}</h3>
-              <p>{post.summary}</p>
               <p>{post.date}</p>
+              <p>
+                {
+                  post.summary.length>100?post.summary.slice(0,100)+"...":post.summary  
+                }
+              </p>
             </Link>
           );
         })}
