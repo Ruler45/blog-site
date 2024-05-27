@@ -1,6 +1,7 @@
 ---
 title: "Building a QR code micro-app"
 summary: "Build a serverless 'hello-world' QR code app with Python and AWS."
+author: "Sahin Alam"
 date: "2021-08-14"
 ---
 

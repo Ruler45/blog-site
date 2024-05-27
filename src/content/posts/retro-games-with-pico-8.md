@@ -1,6 +1,7 @@
 ---
 title: "Create retro games with PICO-8"
 summary: "8-bit games are a great way to learn and expand your portfolio."
+author: "Sahin Alam"
 date: "2020-12-19"
 cr: ["https://www.artstation.com/shizuorin"]
 ---

@@ -1,9 +1,26 @@
 import getPostMetadata from "@/utils/getPostMetadata";
 import BlogPost from "@/components/BlogPost/BlogPost";
+import fs from "fs";
+import matter from "gray-matter";
+
+// This function is used to generate the metadata title for the page
+export async function generateMetadata({ params, searchParams }) {
+  const { slug } = params;
+  const getPostContent = (slug) => {
+    const folderName = "src/content/posts";
+    const filePath = `${folderName}/${slug}.md`;
+    const fileContent = fs.readFileSync(filePath, "utf8");
+    return fileContent;
+  };
+  const post = getPostContent(slug);
+  const { data } = matter(post);
+  return {
+    title: data.title,
+  };
+}
 
 const BlogPage = (props) => {
   const { slug } = props.params;
-  console.log(slug);
   return (
     <div>
       <BlogPost slug={slug} />
@@ -12,15 +29,14 @@ const BlogPage = (props) => {
 };
 
 // This function is used to generate the static pages at build time
-export const getStaticPaths = async () => {
-  const post = getPostMetadata();
-  const paths = post.map((post) => ({
-    params: { slug: post.slug },
+//  generateStaticParams replaces the need for getStaticPrpos/getStaticPaths as the latter are not supported in the current version of the framework
+export const generateStaticParams = async () => {
+  const posts = await getPostMetadata();
+  return posts.map((post) => ({
+    slug: post.slug,
+    title: post.title,
+    tags: post.tags,
   }));
-  return {
-    paths,
-    fallback: false,
-  };
 };
 
 export default BlogPage;

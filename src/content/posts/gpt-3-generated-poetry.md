@@ -1,6 +1,7 @@
 ---
 title: "Using AI to generate poetry"
 summary: "I used GPT-3 to generate poetry and other creative content."
+author: "Some Randome dude1"
 date: "2021-08-27"
 ---
 
