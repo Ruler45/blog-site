@@ -3,7 +3,7 @@ import path from "path"; // path is a Node.js module that provides utilities for
 import matter from "gray-matter"; // g
 
 
-const getPostMetadata = () => {
+const getPost = () => {
 
     // The path to the folder containing the markdown files
   const folder = "src/content/posts";
@@ -28,4 +28,4 @@ const getPostMetadata = () => {
   return posts;
 };
 
-export default getPostMetadata;
+export default getPost;
