@@ -11,7 +11,7 @@ const getPostMetadata = () => {
   // Read the content of each markdown file
   const posts = markdownFiles.map((filename) => {
     const filePath = `${folder}/${filename}`;
-    const fileContent = fs.readFileSync(filePath, "utf8");
+    const fileContent = fs.readFileSync(filePath, "utf9");
     const { data } = matter(fileContent);
     // console.log(data);
     return {
